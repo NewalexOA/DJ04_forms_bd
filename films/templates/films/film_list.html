@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Film List</title>
+</head>
+<body>
+    <h1>Film List</h1>
+    {% if films %}
+        <ul>
+            {% for film in films %}
+                <li>
+                    <h2>{{ film.title }}</h2>
+                    <p>{{ film.description }}</p>
+                    <p>{{ film.review }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'add_film' %}">Add another film</a>
+    {% else %}
+        <p>No reviews available yet.</p>
+    {% endif %}
+    <a href="{% url 'add_film' %}">Add a film</a>
+</body>
+</html>
